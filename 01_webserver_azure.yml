@@ -1,10 +1,10 @@
 ---
 - name: Configure Webserver
-  hosts: johnch
+  hosts: tag_solution_webserver_johnch
   become: true
   vars:
     websiteheader: "Ansible Playbook"
-    websiteauthor: "Jesper Berth"
+    websiteauthor: "Johnny Christiansen"
 
   tasks:
     - name: Install Apache
