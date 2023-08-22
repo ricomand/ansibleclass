@@ -13,6 +13,9 @@
   tasks:
     - name: Install and configure Webserver
       when: ansible_facts['distribution'] == 'RedHat'
+      tags:
+        - install
+        - config
       block:
         - name: Install Packages
           ansible.builtin.package:
@@ -52,6 +55,9 @@
         permanent: true
         state: enabled
       notify: Firewall reload
+      tags:
+        - firewall
+        - config
 
   handlers:
     - name: Firewall reload
